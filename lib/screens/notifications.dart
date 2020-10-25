@@ -1,3 +1,4 @@
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 
 class Notifications extends StatefulWidget {
@@ -18,20 +19,33 @@ class _NotificationsState extends State<Notifications> {
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          ListTile(
-            title: Text("Current Level"),
-            trailing: Text("20%"),
-          ),
-          ListTile(
-            title: Text("Current Level"),
-            trailing: Text("50%"),
-          ),
-          ListTile(
-            title: Text("Current Level"),
-            trailing: Text("70%"),
-          )
+          Card(
+              margin: EdgeInsets.all(10.0),
+              child: ListTile(
+                leading: Icon(Icons.water_damage_sharp),
+                title: Text(
+                  "Level taken on:  " +
+                      formatDate(DateTime.now(),
+                          [yyyy, '-', mm, '-', dd, ' Time:', HH, ':', nn]),
+                ),
+                trailing: Text("70%"),
+              )),
+          Card(
+              margin: EdgeInsets.all(10.0),
+              child: ListTile(
+                leading: Icon(Icons.access_time),
+                title: Text("Current Level"),
+                trailing: Text("50%"),
+              )),
+          Card(
+              margin: EdgeInsets.all(10.0),
+              child: ListTile(
+                leading: Icon(Icons.access_time),
+                title: Text("Current Level"),
+                trailing: Text("20%"),
+              ))
         ],
       )),
     );
