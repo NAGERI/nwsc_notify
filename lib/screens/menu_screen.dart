@@ -34,13 +34,14 @@ class MenuScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Text('Options'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
               onTap: () {
                 // Update the state of the app
                 // ...

@@ -93,6 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 // }
               },
             ),
+            RoundedButton(
+                color: Color(0xFF2A7DCD), text: 'Register', onPressed: null),
           ],
         ),
       ),
